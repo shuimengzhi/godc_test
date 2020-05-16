@@ -1,0 +1,13 @@
+version: '3'
+services:
+  php-nginx:
+    image: webdevops/php-nginx:5.6
+    container_name: gocd_test
+    expose:
+    - "80"
+    # environment:
+    # - VIRTUAL_HOST=本地host的虚拟域名
+    # - LETSENCRYPT_HOST=本地host的虚拟域名(和上面一样)
+    volumes:
+    - ./:/app
+    network_mode: docker_network
